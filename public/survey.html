@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey - SurveyPro</title>
+    <link rel="stylesheet" href="modern-style.css">
+</head>
+<body class="survey-page">
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">📊</span>
+            <span class="logo-text">SurveyPro</span>
+        </div>
+        <nav class="menu">
+            <a href="/welcome" class="menu-item">Home</a>
+            <a href="/survey" class="menu-item active">Survey</a>
+            <a href="/about" class="menu-item">About</a>
+            <a href="/contact" class="menu-item">Contact</a>
+        </nav>
+        <div class="theme-toggle">
+            <button id="themeToggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+    <div class="welcome-container">
+        <div class="hero-section">
+            <h1>Survey</h1>
+            <p class="subtitle">Please take a moment to answer these questions</p>
+        </div>
+        <div class="container">
+            <!-- Custom Survey Builder -->
+            <div id="custom-builder" style="display: none;">
+                <div class="builder-section">
+                    <h3>Create Your Custom Survey</h3>
+                    <p>Add your own questions and answer options</p>
+                    <div id="custom-questions-list"></div>
+                    <button type="button" id="add-question-btn" class="survey-btn">+ Add Question</button>
+                    <button type="button" id="start-custom-survey" class="survey-btn" style="display: none;">Start Survey</button>
+                </div>
+            </div>
+            
+            <!-- Regular Survey Form -->
+            <form id="surveyForm">
+                <div id="questions-container"></div>
+                <button type="submit" id="submitBtn" disabled>Submit Survey</button>
+            </form>
+            <div id="message"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 SurveyPro. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

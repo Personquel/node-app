@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - SurveyPro</title>
+    <link rel="stylesheet" href="modern-style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">📊</span>
+            <span class="logo-text">SurveyPro</span>
+        </div>
+        <nav class="menu">
+            <a href="/welcome" class="menu-item">Home</a>
+            <a href="/survey" class="menu-item">Survey</a>
+            <a href="/about" class="menu-item active">About</a>
+            <a href="/contact" class="menu-item">Contact</a>
+        </nav>
+        <div class="theme-toggle">
+            <button id="themeToggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <h1>About SurveyPro</h1>
+            <p class="subtitle">Transforming feedback into actionable insights for better decision making</p>
+            <p>SurveyPro is a cutting-edge survey platform designed to bridge the gap between organizations and their audiences. We believe that every voice matters and every opinion can drive meaningful change.</p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2>Why Choose SurveyPro</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="icon">⚡</span>
+                    <h3>Lightning Fast</h3>
+                    <p>Quick surveys that respect your time while gathering meaningful insights</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="icon">🔒</span>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is protected with enterprise-grade security and privacy measures</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="icon">📊</span>
+                    <h3>Real-time Analytics</h3>
+                    <p>Instant insights and analytics to help you make data-driven decisions</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="icon">🌍</span>
+                    <h3>Global Reach</h3>
+                    <p>Connect with audiences worldwide through our multilingual platform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empowerment Section -->
+    <section class="empowerment-section">
+        <div class="container">
+            <h2>Empowering Change</h2>
+            <div class="empowerment-content">
+                <div class="empowerment-text">
+                    <h3>Your Voice, Our Mission</h3>
+                    <p>At SurveyPro, we empower individuals and organizations to create positive change through meaningful feedback. Every survey response contributes to better products, services, and experiences.</p>
+                    <ul>
+                        <li>Drive product innovation through user feedback</li>
+                        <li>Improve customer satisfaction and loyalty</li>
+                        <li>Make data-driven decisions with confidence</li>
+                        <li>Build stronger communities through engagement</li>
+                    </ul>
+                </div>
+                <div class="empowerment-stats">
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Surveys Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">User Satisfaction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Countries Reached</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rate Us Section -->
+    <section class="rate-us-section">
+        <div class="container">
+            <h2>Rate Your Experience</h2>
+            <p class="subtitle">Help us improve by sharing your feedback about SurveyPro</p>
+            <div class="rating-container">
+                <div class="star-rating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+                <p class="rating-text">Click the stars to rate us</p>
+                <div class="quick-feedback">
+                    <button class="feedback-btn" data-feedback="excellent">Excellent</button>
+                    <button class="feedback-btn" data-feedback="good">Good</button>
+                    <button class="feedback-btn" data-feedback="average">Average</button>
+                    <button class="feedback-btn" data-feedback="poor">Needs Work</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 SurveyPro. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+
+            // Star rating functionality
+            const stars = document.querySelectorAll('.star');
+            const ratingText = document.querySelector('.rating-text');
+            let currentRating = 0;
+
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    currentRating = parseInt(star.dataset.rating);
+                    updateStars();
+                    ratingText.textContent = `You rated us ${currentRating} star${currentRating > 1 ? 's' : ''}!`;
+                });
+
+                star.addEventListener('mouseover', () => {
+                    const hoverRating = parseInt(star.dataset.rating);
+                    highlightStars(hoverRating);
+                });
+            });
+
+            document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+                updateStars();
+            });
+
+            function updateStars() {
+                stars.forEach((star, index) => {
+                    star.classList.toggle('active', index < currentRating);
+                });
+            }
+
+            function highlightStars(rating) {
+                stars.forEach((star, index) => {
+                    star.classList.toggle('hover', index < rating);
+                });
+            }
+
+            // Quick feedback buttons
+            document.querySelectorAll('.feedback-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.feedback-btn').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    ratingText.textContent = `Thank you for rating us as ${btn.dataset.feedback}!`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Survey Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">📊</span>
+            <span class="logo-text">SurveyPro</span>
+        </div>
+        <nav class="menu">
+            <a href="#home" class="menu-item active">Home</a>
+            <a href="survey.html" class="menu-item">Survey</a>
+            <a href="about.html" class="menu-item">About</a>
+            <a href="contact.html" class="menu-item">Contact</a>
+        </nav>
+        <div class="theme-toggle">
+            <button id="themeToggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+    <div class="welcome-container">
+        <div class="hero-section">
+            <h1>Welcome to Our Survey</h1>
+            <p class="subtitle">Your feedback helps us improve our services</p>
+            <div class="features">
+                <div class="feature">
+                    <span class="icon">📝</span>
+                    <h3>Quick & Easy</h3>
+                    <p>Just 5 simple questions</p>
+                    <div class="metric-preview">
+                        <div class="metric-item satisfied">
+                            <span class="metric-label">Satisfied</span>
+                            <span class="metric-value">85%</span>
+                        </div>
+                        <div class="metric-item average">
+                            <span class="metric-label">Average</span>
+                            <span class="metric-value">12%</span>
+                        </div>
+                        <div class="metric-item dissatisfied">
+                            <span class="metric-label">Dissatisfied</span>
+                            <span class="metric-value">3%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="icon">🔒</span>
+                    <h3>Secure</h3>
+                    <p>Your responses are confidential</p>
+                </div>
+                <div class="feature">
+                    <span class="icon">⚡</span>
+                    <h3>Fast</h3>
+                    <p>Takes less than 3 minutes</p>
+                </div>
+            </div>
+            <a href="survey.html" class="start-btn">Start Survey</a>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 SurveyPro. All rights reserved.</p>
+    </footer>
+    <script>
+        // Theme functionality for welcome page
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        });
+    </script>
+</body>
+</html>
