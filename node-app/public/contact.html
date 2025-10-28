@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SurveyPro</title>
+    <link rel="stylesheet" href="modern-style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">📊</span>
+            <span class="logo-text">SurveyPro</span>
+        </div>
+        <nav class="menu">
+            <a href="/welcome" class="menu-item">Home</a>
+            <a href="/survey" class="menu-item">Survey</a>
+            <a href="/about" class="menu-item">About</a>
+            <a href="/contact" class="menu-item active">Contact</a>
+        </nav>
+        <div class="theme-toggle">
+            <button id="themeToggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <h1>Contact SurveyPro</h1>
+            <p class="subtitle">We're here to help and answer any questions you might have</p>
+            <p>Whether you need support, have suggestions, or want to learn more about our services, we'd love to hear from you. Our team is dedicated to providing excellent customer service.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I create a survey?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply visit our survey page and choose from Quick, Details, or Custom survey options. Follow the prompts to answer the questions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is my data secure?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we use enterprise-grade security measures to protect all user data and survey responses. Your privacy is our top priority.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does a survey take?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Quick surveys take 1 minute, detailed surveys take 5 minutes, and custom surveys take about 3 minutes to complete.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I see survey results?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Survey results are used to improve our services. Individual responses are kept confidential, but aggregate insights help us enhance user experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suggestions Section -->
+    <section class="suggestions-section">
+        <div class="container">
+            <h2>Share Your Suggestions</h2>
+            <p class="subtitle">Help us improve SurveyPro with your ideas</p>
+            <form class="suggestion-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Category</option>
+                        <option value="feature">New Feature</option>
+                        <option value="improvement">Improvement</option>
+                        <option value="bug">Bug Report</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Describe your suggestion..." rows="4" required></textarea>
+                </div>
+                <button type="submit" class="survey-btn">Submit Suggestion</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <span class="icon">📧</span>
+                        <h3>Email</h3>
+                        <p>support@surveypro.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <span class="icon">📞</span>
+                        <h3>Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-card">
+                        <span class="icon">🏢</span>
+                        <h3>Office</h3>
+                        <p>123 Survey Street<br>Data City, DC 12345</p>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="survey-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 SurveyPro. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+
+            // FAQ toggle functionality
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const toggle = question.querySelector('.faq-toggle');
+                    
+                    faqItem.classList.toggle('active');
+                    
+                    if (faqItem.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        toggle.textContent = '-';
+                    } else {
+                        answer.style.maxHeight = '0';
+                        toggle.textContent = '+';
+                    }
+                });
+            });
+
+            // Contact form handling
+            document.querySelector('.contact-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We\'ll get back to you soon.');
+            });
+
+            // Suggestion form handling
+            document.querySelector('.suggestion-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your suggestion! We appreciate your feedback.');
+            });
+
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Complete - Thank You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+        </button>
+    </div>
+    <div class="summary-container">
+        <div class="success-icon">🎉</div>
+        <h1>Thank You!</h1>
+        <p class="summary-message">Your survey has been submitted successfully</p>
+        
+        <div class="summary-stats">
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Questions Answered</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2min</span>
+                <span class="stat-label">Time Taken</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">✓</span>
+                <span class="stat-label">Complete</span>
+            </div>
+        </div>
+
+        <div class="summary-actions">
+            <a href="welcome.html" class="btn-primary">Back to Home</a>
+            <a href="survey.html" class="btn-secondary">Take Another Survey</a>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 SurveyPro. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        });
+    </script>
+</body>
+</html>
